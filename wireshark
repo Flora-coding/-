@@ -1,0 +1,22 @@
+一. 设置抓包原则
+
+capture-options-
+
+1.只抓取HTTP报文
+tcp port 80
+解析：上面是只抓取tcp 协议中80端口的包，大部分Web网站都是工作在80端口的，如果碰到了81端口呢？可以使用逻辑运算符or呗！如 tcp port 80 or tcp port 81
+   
+
+2.只抓取arp报文
+ether proto 0x0806
+解析：ether表示以太网头部，proto表示以太网头部proto字段值为0x0806，这个字段的值表示是ARP报文，如果的ip报文此值为0x8000
+   
+
+3.只抓取与某主机的通信
+host www.cnblogs.com
+只抓取和博客园服务器的通信,src表示源地址，dst表示目标地址
+
+二.设置过滤包原则
+在界面上输入 ip.src=
+            ip.dst=
+            ip.addr=
