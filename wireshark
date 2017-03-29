@@ -17,6 +17,14 @@ host www.cnblogs.com
 只抓取和博客园服务器的通信,src表示源地址，dst表示目标地址
 
 二.设置过滤包原则
+
 在界面上输入 ip.src=
             ip.dst=
             ip.addr=
+            
+            not ip.addr eq 192.168.1.1  源和目的ip地址都不等于
+                ip.addr ne 192.168.1.1  源和目的ip地址有一个不等于  
+            
+            
+            eth.src=
+ 逻辑操作  and  or   not
